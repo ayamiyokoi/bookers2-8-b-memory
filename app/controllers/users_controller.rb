@@ -5,6 +5,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @books = @user.books
     @book = Book.new
+    @books0 = Book.where(created_at: Time.zone.now.all_day, user_id: @user.id)
+    @books1 = Book.where(created_at: 1.day.ago.all_day, user_id: @user.id)
+    @books2 = Book.where(created_at: 2.day.ago.all_day, user_id: @user.id)
+    @books3 = Book.where(created_at: 3.day.ago.all_day, user_id: @user.id)
+    @books4 = Book.where(created_at: 4.day.ago.all_day, user_id: @user.id)
+    @books5 = Book.where(created_at: 5.day.ago.all_day, user_id: @user.id)
+    @books6 = Book.where(created_at: 6.day.ago.all_day, user_id: @user.id)
+ 
   end
 
   def index
